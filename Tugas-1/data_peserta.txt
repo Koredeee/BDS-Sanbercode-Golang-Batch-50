@@ -1,0 +1,6 @@
+Data Peserta Bootcamp Digital Skill - Golang Backend Development
+1. Nama: Muhammad Fatih Daffa Fawwaz
+2. Email: m.fatihdaffa@gmail.com
+3. Sistem Operasi yang digunakan: MacOS
+4. Akun Gitlab/Github: Koredeee
+5. Akun Telegram: @fatihfawwaz07
