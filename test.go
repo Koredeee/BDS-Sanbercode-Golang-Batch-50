@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// "strconv"
+	// "strings"
+)
 
 func introduction(firstName string, lastName string) (string, string) {
 	introFirstName := "Hello My First Name Is " + firstName
@@ -29,6 +33,10 @@ func sum(numbers ...int) int {
 		total += number
 	}
 	return total
+}
+
+func luasSegitiga(alas int, tinggi int) int {
+	return alas * tinggi / 2
 }
 
 func main() {
@@ -76,8 +84,27 @@ func main() {
 	// fmt.Println(total)
 
 	// variadic function with data slice
-	var numbers = []int{2, 6, 7, 8, 9, 10}
-	var total = sum(numbers...)
-	fmt.Println(total)
+	// var numbers = []int{2, 6, 7, 8, 9, 10}
+	// var total = sum(numbers...)
+	// fmt.Println(total)
+
+	// var str = "Golang"
+
+	// for _, char := range str {
+	// 	fmt.Println(strconv.Itoa(int(char)))
+	// }x
+
+	// const (
+	// 	title = "pante"
+	// )
+	// fmt.Println(title)
+
+	// fmt.Println(luasSegitiga(5, 6))
+
+	// var number *int = 4
+
+	var numberA int = 4
+	var numberB *int = &numberA
+	fmt.Println(numberB)
 
 }
