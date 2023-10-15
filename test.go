@@ -6,6 +6,30 @@ import (
 	// "strings"
 )
 
+type person struct {
+	name string
+	age  int
+}
+
+type student struct {
+	grade int
+	person
+}
+
+// nested struct
+type student2 struct {
+	person struct {
+		name string
+		age  int
+	}
+	grade int
+}
+
+// method
+func (s student2) sayHello() {
+	fmt.Printf("Hellom i'm %s, i am %d years old and i'm %dnd grade", s.person.name, s.person.age, s.grade)
+}
+
 func introduction(firstName string, lastName string) (string, string) {
 	introFirstName := "Hello My First Name Is " + firstName
 	introLastName := "Hello My Last Name Is " + lastName
@@ -103,8 +127,66 @@ func main() {
 
 	// var number *int = 4
 
-	var numberA int = 4
-	var numberB *int = &numberA
-	fmt.Println(numberB)
+	// var numberA int = 4
+	// var numberB *int = &numberA
+	// fmt.Println(numberB)
+
+	// struct
+	// contoh 1
+	// var john = student{}
+	// john.name = "john"
+	// john.age = 21
+	// john.grade = 2
+
+	// fmt.Println("name  :", john.name)
+	// fmt.Println("age   :", john.age)
+	// fmt.Println("age   :", john.person.age)
+	// fmt.Println("grade :", john.grade)
+
+	// // contoh 2
+	// var doeData = person{
+	// 	name: "doe",
+	// 	age:  21,
+	// }
+	// var doe = student{
+	// 	person: doeData,
+	// 	grade:  2,
+	// }
+
+	// fmt.Println("name  :", doe.name)
+	// fmt.Println("age   :", doe.age)
+	// fmt.Println("grade :", doe.grade)
+
+	// anonymous struct tanpa pengisian property
+	// var john = struct {
+	// 	person
+	// 	grade int
+	// }{}
+	// john.person = person{"wick", 21}
+	// john.grade = 2
+
+	// // anonymous struct dengan pengisian property
+	// var doe = struct {
+	// 	person
+	// 	grade int
+	// }{
+	// 	person: person{"dor", 21},
+	// 	grade:  2,
+	// }
+
+	// fmt.Println("name  :", john.person.name)
+	// fmt.Println("name   :", doe.person.name)
+
+	var johnData = person{
+		name: "John",
+		age:  21,
+	}
+
+	var john = student2{
+		person: johnData,
+		grade:  2,
+	}
+
+	john.sayHello()
 
 }
