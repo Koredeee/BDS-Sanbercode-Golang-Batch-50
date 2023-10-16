@@ -4,6 +4,8 @@ import (
 	"fmt"
 	// "strconv"
 	// "strings"
+	"sort"
+	"time"
 )
 
 type person struct {
@@ -27,7 +29,7 @@ type student2 struct {
 
 // method
 func (s student2) sayHello() {
-	fmt.Printf("Hellom i'm %s, i am %d years old and i'm %dnd grade", s.person.name, s.person.age, s.grade)
+	fmt.Printf("Hellom i'm %s, i am %d years old and i'm %dnd grade\n", s.person.name, s.person.age, s.grade)
 }
 
 func introduction(firstName string, lastName string) (string, string) {
@@ -188,5 +190,11 @@ func main() {
 	}
 
 	john.sayHello()
+
+	fmt.Println(time.Now())
+
+	s := []string{"Go", "Bravo", "Gopher", "Alpha", "Grin", "Delta"}
+	sort.Strings(s)
+	fmt.Println(s)
 
 }
